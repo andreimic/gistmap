@@ -45,6 +45,10 @@
                 fillColor: color(value),
                 fillOpacity: 0.5
               };
+            },
+            onEachFeature: function(feature, layer) {
+              var code = feature.properties[layerConfig.join.featureProperty];
+              layer.bindPopup("" + data[code]);
             }
           });
           layer.addTo(map);
